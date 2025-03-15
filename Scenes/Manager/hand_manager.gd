@@ -2,12 +2,12 @@ extends Node2D
 
 @export var Plants:Node2D
 @export var cells:GridContainer
-@export var spawner: MultiplayerSpawner
 
 var UINode:UI
 var card_list:Array[CardTemplate]
 var hand_scene:PlantTemplate
 var card_res:cardRes
+var path:String
 
 func _ready() -> void:
 	UINode = get_tree().get_first_node_in_group("UI")
@@ -19,27 +19,25 @@ func _ready() -> void:
 		cell.cell_mouse_enter.connect(_on_cell_mouse_enter)
 		cell.cell_mouse_exit.connect(_on_cell_mouse_exit)
 	
-
 func _on_card_click(card_res:cardRes):
 	if not hand_scene:
 		hand_scene = card_res.plant_scene.instantiate()
 		hand_scene.health = card_res.max_health
 		UINode.add_child(hand_scene)
 		self.card_res = card_res
-
+		self.path = card_res.plant_scene.resource_path
+		
 func _on_click_cell(cell:Cell):
 	if hand_scene:
 		AudioManager.play_plant()
 		cell.is_plant = true
-		spawner.add_spawnable_scene(card_res.plant_scene.resource_path)
-		var plant_instance = spawner.spawn(card_res.plant_scene)
-		plant_instance.global_position =  cell.global_position + card_res.card_shadow.get_size() / 2
+		hand_scene.global_position =  cell.global_position + card_res.card_shadow.get_size() / 2
 		hand_scene.reparent(Plants)
 		hand_scene.play("default")
 		hand_scene._finish_plant()
 		hand_scene.collision_shape.disabled = false
 		hand_scene.cell = cell
-
+		sync_plants.rpc(path, hand_scene.global_position,hand_scene.health, cell.get_path())
 		for card in card_list:
 			if card.card_res.card_type == card_res.card_type:
 				card.is_plant = true
@@ -49,6 +47,19 @@ func _on_click_cell(cell:Cell):
 		cell.card_shadow.texture = null
 		hand_scene = null
 		card_res = null
+		
+@rpc("any_peer","call_remote","reliable")
+func sync_plants(plant_scene_path: String, position: Vector2, health, cell_path):
+	var plant_scene = load(plant_scene_path)
+	var plant = plant_scene.instantiate()
+	plant.health = health
+	plant.position = position  # 设定位置
+	Plants.add_child(plant)
+	plant.play("default")
+	plant._finish_plant()
+	plant.collision_shape.disabled = false
+	var cell = get_node(cell_path)
+	plant.cell = cell
 
 func _on_cell_mouse_enter(cell:Cell):
 	if hand_scene:

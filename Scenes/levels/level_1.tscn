@@ -159,11 +159,10 @@ script = ExtResource("1_e2wht")
 start_sun = 250
 sun_label = NodePath("../../UI/ChooseCardBg/Sun_Label")
 
-[node name="HandManager" type="Node2D" parent="Manager" node_paths=PackedStringArray("Plants", "cells", "spawner")]
+[node name="HandManager" type="Node2D" parent="Manager" node_paths=PackedStringArray("Plants", "cells")]
 script = ExtResource("2_5mljy")
 Plants = NodePath("../../Plants")
 cells = NodePath("../../UI/Cells")
-spawner = NodePath("../../MultiplayerSpawner")
 
 [node name="ZombieManager" type="Node" parent="Manager" node_paths=PackedStringArray("Zombies")]
 script = ExtResource("3_sk7yd")
@@ -471,7 +470,7 @@ shape = SubResource("RectangleShape2D_1sc5r")
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
 _spawnable_scenes = PackedStringArray("res://Scenes/Plants/sun_flower.tscn", "res://Scenes/Plants/pea_shooter.tscn")
-spawn_path = NodePath("../Plants")
+spawn_path = NodePath("../UI")
 
 [node name="Zombies" type="Node2D" parent="."]
 
