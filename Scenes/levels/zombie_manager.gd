@@ -55,6 +55,16 @@ func SpawnARandomZombie():
 		zombie_spawn_list[random_index].add_child(normal_zombie_scene)
 		normal_zombie_scene.dead.connect(_on_zombie_dead)
 		zombie_list.push_back(normal_zombie_scene)
+		sync_zombie_spawn.rpc(random_index)
+	#if rpc_id = 1:左半边生成僵尸，不然就在右半边生成
+	#生成僵尸时候 会在所有客户端同步
+
+@rpc("any_peer","call_remote","reliable")
+func sync_zombie_spawn(index):
+	var normal_zombie_scene:ZombieTemplate = NORMAL_ZOMBIE.instantiate()
+	zombie_spawn_list[index].add_child(normal_zombie_scene)
+	normal_zombie_scene.dead.connect(_on_zombie_dead)
+	zombie_list.push_back(normal_zombie_scene)
 
 func _on_zombie_dead(zombie):
 	zombie_list.erase(zombie)

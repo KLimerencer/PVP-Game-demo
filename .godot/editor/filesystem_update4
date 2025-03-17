@@ -1,4 +1,3 @@
 res://Scenes/levels/level_1.tscn
 res://Scenes/Plants/pea_shooter.tscn
-res://Scenes/Manager/hand_manager.gd
-res://Scenes/Plants/plant_template.gd
+res://Scenes/levels/zombie_manager.gd
