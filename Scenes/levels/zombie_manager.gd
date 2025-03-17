@@ -55,6 +55,14 @@ func SpawnARandomZombie():
 		zombie_spawn_list[random_index].add_child(normal_zombie_scene)
 		normal_zombie_scene.dead.connect(_on_zombie_dead)
 		zombie_list.push_back(normal_zombie_scene)
+		sync_zombie_spawn.rpc(random_index)
+
+@rpc("any_peer","call_remote","reliable")
+func sync_zombie_spawn(index):
+	var normal_zombie_scene:ZombieTemplate = NORMAL_ZOMBIE.instantiate()
+	zombie_spawn_list[index].add_child(normal_zombie_scene)
+	normal_zombie_scene.dead.connect(_on_zombie_dead)
+	zombie_list.push_back(normal_zombie_scene)
 
 func _on_zombie_dead(zombie):
 	zombie_list.erase(zombie)
