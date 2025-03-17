@@ -1,3 +1,8 @@
 res://Scenes/levels/level_1.tscn
 res://Scenes/Plants/pea_shooter.tscn
 res://Scenes/levels/zombie_manager.gd
+res://Scenes/Zombies/normal_zombie.tscn
+res://Scenes/Zombies/States/move.gd
+res://Scenes/Zombies/zombie_template.tscn
+res://Scenes/Zombies/zombie_template.gd
+res://Scenes/levels/menu/menu.tscn

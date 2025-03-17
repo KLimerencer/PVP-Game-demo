@@ -698,7 +698,6 @@ size = Vector2(39, 114)
 
 [node name="NormalZombie" instance=ExtResource("1_gkxsh")]
 sprite_frames = SubResource("SpriteFrames_ychau")
-animation = &"Eat"
 zombie_res = ExtResource("8_she7y")
 
 [node name="CollisionShape2D" parent="Area2D" index="0"]
