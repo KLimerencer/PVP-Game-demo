@@ -6,8 +6,12 @@ extends PlantTemplate
 const PEA_BULLET_SCENE = preload("res://Scenes/Bullet/pea_bullet.tscn")
 
 func _finish_plant():
+	health_component.health = health
 	ray_cast.target_position.x = 800 - position.x
-	
+
+func set_right():
+	ray_cast.target_position.x = -(self.ray_cast.target_position.x)
+
 func _process(delta: float) -> void:
 	if ray_cast.get_collider() and not attack_component.can_attack:
 		attack_component.can_attack = true
