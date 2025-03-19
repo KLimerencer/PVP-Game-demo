@@ -1,8 +1,8 @@
-res://Scenes/levels/level_1.tscn
+res://Scenes/UI/cell.gd
+res://Scenes/Manager/hand_manager.gd
+res://Scenes/Plants/nut.gd
 res://Scenes/Plants/pea_shooter.gd
 res://Scenes/Plants/plant_template.gd
-res://Scenes/Plants/plant_template.tscn
-res://Scenes/Plants/pea_shooter.tscn
-res://Scenes/Plants/sun_flower.tscn
 res://Scenes/Plants/sun_flower.gd
-res://Scenes/Plants/nut.tscn
+res://Scenes/levels/level_1.tscn
+res://Scenes/levels/zombie_manager.gd
