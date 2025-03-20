@@ -59,31 +59,30 @@ func spawn_zombie():
 
 #创建单个僵尸
 func SpawnARandomZombie(right:bool):
-	if not right:
-		if not is_end:
-			var normal_zombie_scene:ZombieTemplate = NORMAL_ZOMBIE.instantiate()
-			var random_index = randi_range(0,4)
-			zombie_spawn_list[random_index].add_child(normal_zombie_scene)
-			normal_zombie_scene.dead.connect(_on_zombie_dead)
-			zombie_list.push_back(normal_zombie_scene)
+	var player_id = multiplayer.get_remote_sender_id()
+	right = true if player_id!=1 else false
+	if not is_end:
+		var normal_zombie_scene:ZombieTemplate = NORMAL_ZOMBIE.instantiate()
+		var random_index = randi_range(0,4)
+		zombie_spawn_list[random_index].add_child(normal_zombie_scene)
+		normal_zombie_scene.dead.connect(_on_zombie_dead)
+		zombie_list.push_back(normal_zombie_scene)
+		if not right:
 			sync_zombie_spawn.rpc(random_index, false)
-	if right:
-		if not is_end:
-			var normal_zombie_scene:ZombieTemplate = NORMAL_ZOMBIE.instantiate()
-			var random_index = randi_range(0,4)
-			zombie_spawn_list2[random_index].add_child(normal_zombie_scene)
-			normal_zombie_scene.dead.connect(_on_zombie_dead)
-			zombie_list2.push_back(normal_zombie_scene)
-			normal_zombie_scene.set_right()
+		if right:
 			sync_zombie_spawn.rpc(random_index, true)
 
 @rpc("any_peer","call_remote","reliable")
 func sync_zombie_spawn(index,is_right):
 	var normal_zombie_scene:ZombieTemplate = NORMAL_ZOMBIE.instantiate()
-	zombie_spawn_list[index].add_child(normal_zombie_scene)
-	normal_zombie_scene.dead.connect(_on_zombie_dead)
-	zombie_list.push_back(normal_zombie_scene)
-	if is_right:
+	if not is_right:
+		zombie_spawn_list[index].add_child(normal_zombie_scene)
+		normal_zombie_scene.dead.connect(_on_zombie_dead)
+		zombie_list.push_back(normal_zombie_scene)
+	else:
+		zombie_spawn_list2[index].add_child(normal_zombie_scene)
+		normal_zombie_scene.dead.connect(_on_zombie_dead)
+		zombie_list2.push_back(normal_zombie_scene)
 		normal_zombie_scene.set_right.call_deferred()
 
 func _on_zombie_dead(zombie):

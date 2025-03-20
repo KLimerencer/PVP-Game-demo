@@ -2,12 +2,14 @@ extends Node2D
 
 @export var Plants:Node2D
 @export var cells:GridContainer
+@export var cells2:GridContainer
 
 var UINode:UI
 var card_list:Array[CardTemplate]
 var hand_scene:PlantTemplate
 var card_res:cardRes
 var path:String
+var is_right:bool
 
 func _ready() -> void:
 	UINode = get_tree().get_first_node_in_group("UI")
@@ -17,6 +19,10 @@ func _ready() -> void:
 	for cell in cells.get_children():
 		cell.click_cell.connect(_on_click_cell)
 		cell.cell_mouse_enter.connect(_on_cell_mouse_enter)
+		cell.cell_mouse_exit.connect(_on_cell_mouse_exit)
+	for cell in cells2.get_children():
+		cell.click_cell.connect(_on_click_cell)
+		cell.cell_mouse_enter.connect(_on_cell_mouse_enter_right)
 		cell.cell_mouse_exit.connect(_on_cell_mouse_exit)
 	
 func _on_card_click(card_res:cardRes):
@@ -64,6 +70,14 @@ func sync_plants(plant_scene_path: String, position: Vector2, health, cell_path)
 func _on_cell_mouse_enter(cell:Cell):
 	if hand_scene:
 		cell.card_shadow.texture = card_res.card_shadow
+	if is_right:
+		is_right = false
+		
+func _on_cell_mouse_enter_right(cell:Cell):
+	if hand_scene:
+		cell.card_shadow.texture = card_res.card_shadow
+	if not is_right:
+		is_right = true
 
 func _on_cell_mouse_exit(cell:Cell):
 	cell.card_shadow.texture = null

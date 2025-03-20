@@ -159,10 +159,11 @@ script = ExtResource("1_e2wht")
 start_sun = 250
 sun_label = NodePath("../../UI/ChooseCardBg/Sun_Label")
 
-[node name="HandManager" type="Node2D" parent="Manager" node_paths=PackedStringArray("Plants", "cells")]
+[node name="HandManager" type="Node2D" parent="Manager" node_paths=PackedStringArray("Plants", "cells", "cells2")]
 script = ExtResource("2_5mljy")
 Plants = NodePath("../../Plants")
 cells = NodePath("../../UI/Cells")
+cells2 = NodePath("../../UI/Cells2")
 
 [node name="ZombieManager" type="Node" parent="Manager" node_paths=PackedStringArray("Zombies", "Zombies2")]
 script = ExtResource("3_sk7yd")
