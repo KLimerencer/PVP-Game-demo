@@ -8,6 +8,7 @@ const SUN_SCENE = preload("res://Scenes/Effects/sun.tscn")
 var UI_Node:UI
 
 func _finish_plant():
+	health_component.health = health
 	birth_sun_component.birth_sun.connect(_on_birth_sun)
 	UI_Node = get_tree().get_first_node_in_group("UI")
 	birth_sun_component.timer.start()

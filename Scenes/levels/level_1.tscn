@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" path="res://Scenes/Manager/game_manager.gd" id="1_8wljv"]
 [ext_resource type="Script" path="res://Scenes/Manager/sun_manager.gd" id="1_e2wht"]
-[ext_resource type="Texture2D" uid="uid://4ic8m6ad25pf" path="res://textures/Images/Background/iPadHD1.png" id="1_o8jrb"]
 [ext_resource type="Script" path="res://Scenes/Manager/hand_manager.gd" id="2_5mljy"]
 [ext_resource type="Texture2D" uid="uid://beu4irqktr4rh" path="res://textures/Images/UI/ChooserBackground.png" id="2_rshtc"]
 [ext_resource type="Script" path="res://Scenes/UI/ui.gd" id="3_c8psq"]
 [ext_resource type="Script" path="res://Scenes/levels/zombie_manager.gd" id="3_sk7yd"]
 [ext_resource type="PackedScene" uid="uid://bef68ir2rnf70" path="res://Scenes/Cards/SunFlower/sunFlower.tscn" id="3_uql73"]
+[ext_resource type="Texture2D" uid="uid://dtr5qi80swsec" path="res://textures/Images/Background/bg1.png" id="5_kiem4"]
 [ext_resource type="PackedScene" uid="uid://c4x7jlwywe134" path="res://Scenes/Cards/PeaShooter/pea_shooter.tscn" id="6_egttu"]
 [ext_resource type="Texture2D" uid="uid://dhli2elk8ve12" path="res://textures/Images/UI/StartPlant.png" id="7_nlswf"]
 [ext_resource type="Texture2D" uid="uid://b3bnnl62vhqrx" path="res://textures/Images/UI/StartReady.png" id="8_18lra"]
@@ -140,7 +140,7 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1sc5r"]
-size = Vector2(86, 608)
+size = Vector2(77, 1047)
 
 [node name="level1" type="Node2D"]
 
@@ -159,21 +159,21 @@ script = ExtResource("1_e2wht")
 start_sun = 250
 sun_label = NodePath("../../UI/ChooseCardBg/Sun_Label")
 
-[node name="HandManager" type="Node2D" parent="Manager" node_paths=PackedStringArray("Plants", "cells")]
+[node name="HandManager" type="Node2D" parent="Manager" node_paths=PackedStringArray("Plants", "cells", "cells2")]
 script = ExtResource("2_5mljy")
 Plants = NodePath("../../Plants")
 cells = NodePath("../../UI/Cells")
+cells2 = NodePath("../../UI/Cells2")
 
-[node name="ZombieManager" type="Node" parent="Manager" node_paths=PackedStringArray("Zombies")]
+[node name="ZombieManager" type="Node" parent="Manager" node_paths=PackedStringArray("Zombies", "Zombies2")]
 script = ExtResource("3_sk7yd")
 Zombies = NodePath("../../Zombies")
+Zombies2 = NodePath("../../Zombies2")
 
 [node name="Bg" type="TextureRect" parent="."]
-offset_left = -176.0
-offset_top = -96.0
-offset_right = 1172.0
-offset_bottom = 644.0
-texture = ExtResource("1_o8jrb")
+offset_right = 1918.0
+offset_bottom = 1053.0
+texture = ExtResource("5_kiem4")
 expand_mode = 1
 
 [node name="UI" type="CanvasLayer" parent="." node_paths=PackedStringArray("card_list", "ChooseCardBg") groups=["UI"]]
@@ -310,12 +310,12 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Cells" type="GridContainer" parent="UI"]
-offset_left = 67.0
-offset_top = 103.0
-offset_right = 774.0
-offset_bottom = 582.0
-theme_override_constants/h_separation = 80
-theme_override_constants/v_separation = 100
+offset_left = 42.0
+offset_top = 350.0
+offset_right = 789.0
+offset_bottom = 848.0
+theme_override_constants/h_separation = 83
+theme_override_constants/v_separation = 102
 columns = 9
 
 [node name="Cell" parent="UI/Cells" instance=ExtResource("8_qy7kv")]
@@ -453,17 +453,162 @@ layout_mode = 2
 [node name="Cell45" parent="UI/Cells" instance=ExtResource("8_qy7kv")]
 layout_mode = 2
 
+[node name="Cells2" type="GridContainer" parent="UI"]
+offset_left = 1130.0
+offset_top = 350.0
+offset_right = 1877.0
+offset_bottom = 848.0
+pivot_offset = Vector2(749, 0)
+theme_override_constants/h_separation = 83
+theme_override_constants/v_separation = 102
+columns = 9
+
+[node name="Cell" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell2" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell3" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell4" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell5" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell6" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell7" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell8" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell9" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell10" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell11" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell12" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell13" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell14" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell15" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell16" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell17" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell18" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell19" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell20" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell21" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell22" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell23" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell24" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell25" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell26" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell27" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell28" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell29" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell30" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell31" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell32" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell33" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell34" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell35" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell36" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell37" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell38" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell39" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell40" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell41" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell42" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell43" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell44" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell45" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
 [node name="BirthSunComponent" parent="UI" instance=ExtResource("9_4q2ys")]
 
 [node name="Camera2D" type="Camera2D" parent="UI"]
-offset = Vector2(400, 300)
+offset = Vector2(960, 540)
 
 [node name="FailArea" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FailArea"]
-position = Vector2(-3, 310)
+position = Vector2(-7.5, 529.5)
 shape = SubResource("RectangleShape2D_1sc5r")
 
 [node name="Plants" type="Node2D" parent="."]
@@ -473,18 +618,36 @@ _spawnable_scenes = PackedStringArray("res://Scenes/Plants/sun_flower.tscn", "re
 spawn_path = NodePath("../UI")
 
 [node name="Zombies" type="Node2D" parent="."]
+position = Vector2(0, 3)
 
 [node name="SpawnZombieNode" type="Node2D" parent="Zombies"]
-position = Vector2(822, 123)
+position = Vector2(822, 358)
 
 [node name="SpawnZombieNode2" type="Node2D" parent="Zombies"]
-position = Vector2(822, 218)
+position = Vector2(822, 453)
 
 [node name="SpawnZombieNode3" type="Node2D" parent="Zombies"]
-position = Vector2(822, 317)
+position = Vector2(822, 552)
 
 [node name="SpawnZombieNode4" type="Node2D" parent="Zombies"]
-position = Vector2(822, 414)
+position = Vector2(822, 649)
 
 [node name="SpawnZombieNode5" type="Node2D" parent="Zombies"]
-position = Vector2(822, 507)
+position = Vector2(822, 742)
+
+[node name="Zombies2" type="Node2D" parent="."]
+
+[node name="SpawnZombieNode" type="Node2D" parent="Zombies2"]
+position = Vector2(1088, 358)
+
+[node name="SpawnZombieNode2" type="Node2D" parent="Zombies2"]
+position = Vector2(1088, 453)
+
+[node name="SpawnZombieNode3" type="Node2D" parent="Zombies2"]
+position = Vector2(1088, 552)
+
+[node name="SpawnZombieNode4" type="Node2D" parent="Zombies2"]
+position = Vector2(1088, 649)
+
+[node name="SpawnZombieNode5" type="Node2D" parent="Zombies2"]
+position = Vector2(1088, 742)
