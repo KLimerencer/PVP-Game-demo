@@ -10,7 +10,10 @@ func _finish_plant():
 	ray_cast.target_position.x = 800 - position.x
 
 func set_right():
-	ray_cast.target_position.x = -(self.ray_cast.target_position.x)
+	is_right = true
+	flip_h = true
+	area_2d.scale.x = -1
+	marker.position.x = -(marker.position.x)
 
 func _process(delta: float) -> void:
 	if ray_cast.get_collider() and not attack_component.can_attack:
@@ -22,6 +25,8 @@ func _on_frame_changed() -> void:
 	if animation == "attack" and frame == 11:
 		var bullet:BulletTemplate = PEA_BULLET_SCENE.instantiate()
 		bullet.global_position = marker.global_position
+		if is_right:
+			bullet.is_right = true
 		get_parent().add_child(bullet)
 
 func _on_animation_finished() -> void:
