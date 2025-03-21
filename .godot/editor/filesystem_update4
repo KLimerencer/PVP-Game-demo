@@ -2,3 +2,5 @@ res://Scenes/levels/level_1.tscn
 res://Scenes/Plants/pea_shooter.tscn
 res://Scenes/Zombies/normal_zombie.tscn
 res://Scenes/levels/zombie_manager.gd
+res://Scenes/levels/menu/menu.tscn
+res://lobby.gd
