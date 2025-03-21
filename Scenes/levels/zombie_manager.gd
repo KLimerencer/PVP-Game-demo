@@ -76,5 +76,6 @@ func sync_zombie_spawn(index):
 
 func _on_zombie_dead(zombie):
 	zombie_list.erase(zombie)
+	zombie_list2.erase(zombie)
 	if len(zombie_list) == 0 and spawn_over:
 		game_success.emit()
