@@ -32,6 +32,15 @@ func _on_card_click(card_res:cardRes):
 		UINode.add_child(hand_scene)
 		self.card_res = card_res
 		self.path = card_res.plant_scene.resource_path
+	else:
+		UINode.remove_child(hand_scene)
+		hand_scene.queue_free()
+		hand_scene = null
+		hand_scene = card_res.plant_scene.instantiate()
+		hand_scene.health = card_res.max_health
+		UINode.add_child(hand_scene)
+		self.card_res = card_res
+		self.path = card_res.plant_scene.resource_path
 		
 func _on_click_cell(cell:Cell):
 	if hand_scene:
