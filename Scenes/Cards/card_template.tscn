@@ -1,12 +1,12 @@
 [gd_scene load_steps=11 format=3 uid="uid://ch766204qmb1s"]
 
-[ext_resource type="Script" path="res://Scenes/Cards/card_template.gd" id="1_glnw1"]
-[ext_resource type="Script" path="res://StateMachine/state_machine.gd" id="2_yhmv2"]
-[ext_resource type="Script" path="res://Scenes/Cards/States/disable.gd" id="3_1ncc6"]
-[ext_resource type="Script" path="res://Scenes/Cards/States/cooling.gd" id="4_hr5x1"]
-[ext_resource type="Script" path="res://Scenes/Cards/States/waiting_sun.gd" id="5_q7eeb"]
-[ext_resource type="Script" path="res://Scenes/Cards/States/ready.gd" id="6_rhml4"]
-[ext_resource type="Script" path="res://Scenes/Cards/States/click.gd" id="7_6vlrs"]
+[ext_resource type="Script" uid="uid://dp734c2irqs2r" path="res://Scenes/Cards/card_template.gd" id="1_glnw1"]
+[ext_resource type="Script" uid="uid://c0wyxufuodrmr" path="res://StateMachine/state_machine.gd" id="2_yhmv2"]
+[ext_resource type="Script" uid="uid://dmdowux65bcbf" path="res://Scenes/Cards/States/disable.gd" id="3_1ncc6"]
+[ext_resource type="Script" uid="uid://c5ooke4lt6rne" path="res://Scenes/Cards/States/cooling.gd" id="4_hr5x1"]
+[ext_resource type="Script" uid="uid://bdxgictjp20w8" path="res://Scenes/Cards/States/waiting_sun.gd" id="5_q7eeb"]
+[ext_resource type="Script" uid="uid://dmij2f4q16fwq" path="res://Scenes/Cards/States/ready.gd" id="6_rhml4"]
+[ext_resource type="Script" uid="uid://gw7hlxf1gcay" path="res://Scenes/Cards/States/click.gd" id="7_6vlrs"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ilv24"]
 

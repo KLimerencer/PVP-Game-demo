@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://b1pybrekxpkba"]
 
-[ext_resource type="Script" path="res://Scenes/Plants/plant_template.gd" id="1_nftsx"]
+[ext_resource type="Script" uid="uid://c5w0420dckmev" path="res://Scenes/Plants/plant_template.gd" id="1_nftsx"]
 [ext_resource type="PackedScene" uid="uid://b2ndpd378uvj5" path="res://Scenes/Components/health_component.tscn" id="2_bc3cl"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mqx7h"]

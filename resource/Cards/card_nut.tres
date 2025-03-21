@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="cardRes" load_steps=6 format=3 uid="uid://blt2re733hnrs"]
 
-[ext_resource type="Script" path="res://resource/Cards/cardRes.gd" id="1_6n0nr"]
+[ext_resource type="Script" uid="uid://w1lgsy0rdd8l" path="res://resource/Cards/cardRes.gd" id="1_6n0nr"]
 [ext_resource type="Texture2D" uid="uid://pgh33by3w27u" path="res://textures/Images/Card/card_wallnut2.png" id="1_aa3yt"]
 [ext_resource type="Texture2D" uid="uid://v1tl4o78av0t" path="res://textures/Images/Card/card_wallnut.png" id="2_5pguo"]
 [ext_resource type="Texture2D" uid="uid://c8o3spgxoepin" path="res://textures/Images/Plants/WallNut_1.png" id="3_mw3ne"]

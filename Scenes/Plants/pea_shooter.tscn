@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://b1pybrekxpkba" path="res://Scenes/Plants/plant_template.tscn" id="1_etpl5"]
 [ext_resource type="Texture2D" uid="uid://liukn0vip52g" path="res://textures/Images/Plants/PeaShooterSingle0080-sheet.png" id="2_0f3qk"]
 [ext_resource type="Texture2D" uid="uid://b5wbx1fl2anhd" path="res://textures/Images/Plants/PeaShooterSingle0105-sheet.png" id="2_k72q1"]
-[ext_resource type="Script" path="res://Scenes/Plants/pea_shooter.gd" id="4_apkpw"]
+[ext_resource type="Script" uid="uid://pfs48v2pnmd8" path="res://Scenes/Plants/pea_shooter.gd" id="4_apkpw"]
 [ext_resource type="PackedScene" uid="uid://dukxhdk0u6dth" path="res://Scenes/Components/attack_component.tscn" id="4_xrf8g"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d25c4"]

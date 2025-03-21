@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://ogv7wh031duf"]
 
-[ext_resource type="Script" path="res://Scenes/Components/birth_sun_component.gd" id="1_itt1m"]
+[ext_resource type="Script" uid="uid://cwqo115l53pln" path="res://Scenes/Components/birth_sun_component.gd" id="1_itt1m"]
 
 [node name="BirthSunComponent" type="Node"]
 script = ExtResource("1_itt1m")

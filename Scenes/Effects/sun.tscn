@@ -1,7 +1,7 @@
 [gd_scene load_steps=27 format=3 uid="uid://dok2lf3mdrnia"]
 
 [ext_resource type="Texture2D" uid="uid://bbnnnge236unq" path="res://textures/Images/Effect/Sun_1-sheet.png" id="1_fvyuj"]
-[ext_resource type="Script" path="res://Scenes/Effects/sun.gd" id="2_ryypb"]
+[ext_resource type="Script" uid="uid://c5qkk74x2v7in" path="res://Scenes/Effects/sun.gd" id="2_ryypb"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a20q5"]
 atlas = ExtResource("1_fvyuj")

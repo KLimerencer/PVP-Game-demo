@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://c00sm277g4t5o"]
 
-[ext_resource type="Script" path="res://Scenes/levels/menu/menu.gd" id="1_td1n7"]
+[ext_resource type="Script" uid="uid://vt5a7x0ct5q4" path="res://Scenes/levels/menu/menu.gd" id="1_td1n7"]
 [ext_resource type="Texture2D" uid="uid://83vnnqxckbnl" path="res://textures/Images/Background/main_bg.png" id="1_w82cq"]
 [ext_resource type="PackedScene" uid="uid://dgphm0h17i4qk" path="res://Scenes/levels/level_1.tscn" id="2_qtuap"]
 
@@ -20,7 +20,7 @@ ui = NodePath("UI")
 [node name="level" type="Node" parent="."]
 
 [node name="LevelSpawner" type="MultiplayerSpawner" parent="."]
-_spawnable_scenes = PackedStringArray("res://Scenes/levels/level_1.tscn")
+_spawnable_scenes = PackedStringArray("uid://dgphm0h17i4qk")
 spawn_path = NodePath("../level")
 spawn_limit = 1
 

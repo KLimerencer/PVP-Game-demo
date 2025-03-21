@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://btdq8bkkfw0qf" path="res://textures/Images/Plants/WallNut_1-sheet.png" id="2_n4byg"]
 [ext_resource type="Texture2D" uid="uid://cbnq352gwqxh" path="res://textures/Images/Plants/Wallnut_cracked1_2-sheet.png" id="3_nphn6"]
 [ext_resource type="Texture2D" uid="uid://degas75hoph7r" path="res://textures/Images/Plants/Wallnut_cracked2_1-sheet.png" id="4_n368q"]
-[ext_resource type="Script" path="res://Scenes/Plants/nut.gd" id="5_n7gw4"]
+[ext_resource type="Script" uid="uid://da146b8tvmkva" path="res://Scenes/Plants/nut.gd" id="5_n7gw4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_aynt7"]
 atlas = ExtResource("2_n4byg")

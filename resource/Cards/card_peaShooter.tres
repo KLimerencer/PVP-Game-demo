@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="cardRes" load_steps=6 format=3 uid="uid://xk7vw77raflw"]
 
-[ext_resource type="Script" path="res://resource/Cards/cardRes.gd" id="1_8ly21"]
+[ext_resource type="Script" uid="uid://w1lgsy0rdd8l" path="res://resource/Cards/cardRes.gd" id="1_8ly21"]
 [ext_resource type="Texture2D" uid="uid://fdk6np68b6pm" path="res://textures/Images/Card/card_peashooter2.png" id="1_jhkfw"]
 [ext_resource type="Texture2D" uid="uid://v185ysm7caip" path="res://textures/Images/Plants/Peashooter_1.png" id="1_nmh5f"]
 [ext_resource type="Texture2D" uid="uid://cqnfr5a5tvdiu" path="res://textures/Images/Card/card_peashooter.png" id="1_o4ekg"]

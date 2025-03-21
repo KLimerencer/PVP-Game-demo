@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://chewhhjhhaa5q"]
 
-[ext_resource type="Script" path="res://Scenes/StartMenu/start_menu.gd" id="1_2ko1v"]
+[ext_resource type="Script" uid="uid://ba6078bj6rdpx" path="res://Scenes/StartMenu/start_menu.gd" id="1_2ko1v"]
 [ext_resource type="Texture2D" uid="uid://6yso87yy4h8u" path="res://textures/Images/UI/MainMenu.png" id="1_fe3b7"]
 [ext_resource type="PackedScene" uid="uid://dgphm0h17i4qk" path="res://Scenes/levels/level_1.tscn" id="2_f2p7h"]
 [ext_resource type="Texture2D" uid="uid://c4bnrdcuguqey" path="res://textures/Images/UI/btn_adventure.png" id="2_gb2px"]

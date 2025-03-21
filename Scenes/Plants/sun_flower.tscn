@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://b1pybrekxpkba" path="res://Scenes/Plants/plant_template.tscn" id="1_odcwo"]
 [ext_resource type="Texture2D" uid="uid://1wy13rxevc5s" path="res://textures/Images/Plants/SunFlower_1-sheet2.png" id="2_vswoo"]
-[ext_resource type="Script" path="res://Scenes/Plants/sun_flower.gd" id="3_sjcal"]
+[ext_resource type="Script" uid="uid://63p6eh13ub5n" path="res://Scenes/Plants/sun_flower.gd" id="3_sjcal"]
 [ext_resource type="PackedScene" uid="uid://ogv7wh031duf" path="res://Scenes/Components/birth_sun_component.tscn" id="3_wt4nt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v5hmt"]
@@ -186,8 +186,8 @@ tracks/1/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5fwix"]
 _data = {
-"RESET": SubResource("Animation_ar8ww"),
-"birth_sun": SubResource("Animation_kpc2v")
+&"RESET": SubResource("Animation_ar8ww"),
+&"birth_sun": SubResource("Animation_kpc2v")
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wvaym"]

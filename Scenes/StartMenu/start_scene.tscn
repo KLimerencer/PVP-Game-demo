@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://cbq77g2ft6j0u"]
 
 [ext_resource type="Texture2D" uid="uid://b5k4u1s0i5wvn" path="res://textures/Images/Background/titlescreen.jpg" id="1_vf62c"]
-[ext_resource type="Script" path="res://Scenes/StartMenu/start_scene.gd" id="1_xemlt"]
+[ext_resource type="Script" uid="uid://3idpx27x26ma" path="res://Scenes/StartMenu/start_scene.gd" id="1_xemlt"]
 [ext_resource type="Texture2D" uid="uid://h8egiicmf06h" path="res://textures/Images/UI/PvZ_Logo.png" id="2_cnk6n"]
 [ext_resource type="PackedScene" uid="uid://chewhhjhhaa5q" path="res://Scenes/StartMenu/start_menu.tscn" id="2_qjuki"]
 [ext_resource type="Texture2D" uid="uid://cf3axje8p4p6v" path="res://textures/Images/UI/LoadBar_dirt.png" id="3_i6qoy"]
@@ -164,8 +164,8 @@ tracks/5/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ywdsd"]
 _data = {
-"RESET": SubResource("Animation_jpshd"),
-"start_scene": SubResource("Animation_j7611")
+&"RESET": SubResource("Animation_jpshd"),
+&"start_scene": SubResource("Animation_j7611")
 }
 
 [node name="StartScene" type="Control"]

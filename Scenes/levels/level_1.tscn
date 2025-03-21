@@ -1,11 +1,11 @@
 [gd_scene load_steps=24 format=3 uid="uid://dgphm0h17i4qk"]
 
-[ext_resource type="Script" path="res://Scenes/Manager/game_manager.gd" id="1_8wljv"]
-[ext_resource type="Script" path="res://Scenes/Manager/sun_manager.gd" id="1_e2wht"]
-[ext_resource type="Script" path="res://Scenes/Manager/hand_manager.gd" id="2_5mljy"]
+[ext_resource type="Script" uid="uid://wrvomki4kgua" path="res://Scenes/Manager/game_manager.gd" id="1_8wljv"]
+[ext_resource type="Script" uid="uid://dqnklut8gtjni" path="res://Scenes/Manager/sun_manager.gd" id="1_e2wht"]
+[ext_resource type="Script" uid="uid://by8njsq3tom14" path="res://Scenes/Manager/hand_manager.gd" id="2_5mljy"]
 [ext_resource type="Texture2D" uid="uid://beu4irqktr4rh" path="res://textures/Images/UI/ChooserBackground.png" id="2_rshtc"]
-[ext_resource type="Script" path="res://Scenes/UI/ui.gd" id="3_c8psq"]
-[ext_resource type="Script" path="res://Scenes/levels/zombie_manager.gd" id="3_sk7yd"]
+[ext_resource type="Script" uid="uid://b263gg4x0sfc" path="res://Scenes/UI/ui.gd" id="3_c8psq"]
+[ext_resource type="Script" uid="uid://cvs15ti2s1yf7" path="res://Scenes/levels/zombie_manager.gd" id="3_sk7yd"]
 [ext_resource type="PackedScene" uid="uid://bef68ir2rnf70" path="res://Scenes/Cards/SunFlower/sunFlower.tscn" id="3_uql73"]
 [ext_resource type="Texture2D" uid="uid://dtr5qi80swsec" path="res://textures/Images/Background/bg1.png" id="5_kiem4"]
 [ext_resource type="PackedScene" uid="uid://c4x7jlwywe134" path="res://Scenes/Cards/PeaShooter/pea_shooter.tscn" id="6_egttu"]
@@ -99,8 +99,8 @@ tracks/2/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_d5lxy"]
 _data = {
-"RESET": SubResource("Animation_dpiqq"),
-"begin_show": SubResource("Animation_haw25")
+&"RESET": SubResource("Animation_dpiqq"),
+&"begin_show": SubResource("Animation_haw25")
 }
 
 [sub_resource type="Animation" id="Animation_uffqr"]
@@ -135,8 +135,8 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cg8la"]
 _data = {
-"RESET": SubResource("Animation_uffqr"),
-"failShow": SubResource("Animation_b1vdi")
+&"RESET": SubResource("Animation_uffqr"),
+&"failShow": SubResource("Animation_b1vdi")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1sc5r"]
@@ -239,7 +239,7 @@ texture = ExtResource("7_nlswf")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="UI/BeginShow"]
 libraries = {
-"": SubResource("AnimationLibrary_d5lxy")
+&"": SubResource("AnimationLibrary_d5lxy")
 }
 
 [node name="FailShow" type="Control" parent="UI"]
@@ -269,7 +269,7 @@ texture = ExtResource("10_rpebv")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="UI/FailShow"]
 libraries = {
-"": SubResource("AnimationLibrary_cg8la")
+&"": SubResource("AnimationLibrary_cg8la")
 }
 
 [node name="ChooseCardBg" type="TextureRect" parent="UI"]
@@ -618,7 +618,7 @@ shape = SubResource("RectangleShape2D_1sc5r")
 [node name="Plants" type="Node2D" parent="."]
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
-_spawnable_scenes = PackedStringArray("res://Scenes/Plants/sun_flower.tscn", "res://Scenes/Plants/pea_shooter.tscn")
+_spawnable_scenes = PackedStringArray("uid://8la23gfbglph", "uid://b8jgylss52iek")
 spawn_path = NodePath("../UI")
 
 [node name="Zombies" type="Node2D" parent="."]
