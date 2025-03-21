@@ -5,9 +5,13 @@ class_name BulletTemplate
 @export var effect:PackedScene
 @export var damage := 25
 @onready var ray_cast: RayCast2D = $RayCast2D
+var is_right = false
 
 func _process(delta: float) -> void:
-	position.x += speed * delta
+	if not is_right:	
+		position.x += speed * delta
+	if is_right:
+		position.x -= speed * delta
 	if ray_cast.get_collider():
 		var effect_scene = effect.instantiate()
 		effect_scene.global_position = global_position

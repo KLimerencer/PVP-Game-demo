@@ -35,15 +35,13 @@ func end_game():
 func spawn_zombie():
 	AudioManager.play_zombie_first_coming()
 	for i in range(2):
-		SpawnARandomZombie(false)
-		SpawnARandomZombie(true)
+		SpawnARandomZombie()
 		await get_tree().create_timer(1).timeout
 		
 	await get_tree().create_timer(5).timeout
 
 	for i in range(3):
-		SpawnARandomZombie(false)
-		SpawnARandomZombie(true)
+		SpawnARandomZombie()
 		await get_tree().create_timer(1).timeout
 		
 	await get_tree().create_timer(5).timeout
@@ -51,39 +49,30 @@ func spawn_zombie():
 	#最后一波
 	AudioManager.play_last_wave()
 	for i in range(5):
-		SpawnARandomZombie(false)
-		SpawnARandomZombie(true)
+		SpawnARandomZombie()
 		await get_tree().create_timer(1).timeout
 		
 	spawn_over = true
 
 #创建单个僵尸
-func SpawnARandomZombie(right:bool):
-	var player_id = multiplayer.get_remote_sender_id()
-	right = true if player_id!=1 else false
+func SpawnARandomZombie():
+	var player = multiplayer.get_unique_id()
+	var is_right = true if player != 1 else false
 	if not is_end:
 		var normal_zombie_scene:ZombieTemplate = NORMAL_ZOMBIE.instantiate()
 		var random_index = randi_range(0,4)
 		zombie_spawn_list[random_index].add_child(normal_zombie_scene)
 		normal_zombie_scene.dead.connect(_on_zombie_dead)
 		zombie_list.push_back(normal_zombie_scene)
-		if not right:
-			sync_zombie_spawn.rpc(random_index, false)
-		if right:
-			sync_zombie_spawn.rpc(random_index, true)
+		sync_zombie_spawn.rpc(random_index)
 
 @rpc("any_peer","call_remote","reliable")
-func sync_zombie_spawn(index,is_right):
+func sync_zombie_spawn(index):
 	var normal_zombie_scene:ZombieTemplate = NORMAL_ZOMBIE.instantiate()
-	if not is_right:
-		zombie_spawn_list[index].add_child(normal_zombie_scene)
-		normal_zombie_scene.dead.connect(_on_zombie_dead)
-		zombie_list.push_back(normal_zombie_scene)
-	else:
-		zombie_spawn_list2[index].add_child(normal_zombie_scene)
-		normal_zombie_scene.dead.connect(_on_zombie_dead)
-		zombie_list2.push_back(normal_zombie_scene)
-		normal_zombie_scene.set_right.call_deferred()
+	zombie_spawn_list2[index].add_child(normal_zombie_scene)
+	normal_zombie_scene.dead.connect(_on_zombie_dead)
+	zombie_list2.push_back(normal_zombie_scene)
+	normal_zombie_scene.set_right.call_deferred()
 
 func _on_zombie_dead(zombie):
 	zombie_list.erase(zombie)

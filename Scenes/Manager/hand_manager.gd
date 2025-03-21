@@ -24,7 +24,7 @@ func _ready() -> void:
 		cell.click_cell.connect(_on_click_cell)
 		cell.cell_mouse_enter.connect(_on_cell_mouse_enter_right)
 		cell.cell_mouse_exit.connect(_on_cell_mouse_exit)
-	
+
 func _on_card_click(card_res:cardRes):
 	if not hand_scene:
 		hand_scene = card_res.plant_scene.instantiate()
@@ -43,7 +43,11 @@ func _on_click_cell(cell:Cell):
 		hand_scene._finish_plant()
 		hand_scene.collision_shape.disabled = false
 		hand_scene.cell = cell
-		sync_plants.rpc(path, hand_scene.global_position,hand_scene.health, cell.get_path())
+		var cell2_path = '/root/Menu/level/level1/UI/Cells2/'+  str(cell.get_path()).split('/')[-1]
+		var cell2 = get_node(NodePath(cell2_path))
+		var position = cell2.global_position + card_res.card_shadow.get_size() / 2
+		sync_plants.rpc(path, position,hand_scene.health, cell2_path)
+		print(cell.get_path())
 		for card in card_list:
 			if card.card_res.card_type == card_res.card_type:
 				card.is_plant = true
@@ -64,6 +68,7 @@ func sync_plants(plant_scene_path: String, position: Vector2, health, cell_path)
 	plant.play("default")
 	plant._finish_plant()
 	plant.collision_shape.disabled = false
+	plant.set_right()
 	var cell = get_node(cell_path)
 	plant.cell = cell
 

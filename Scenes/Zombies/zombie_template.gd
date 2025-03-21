@@ -20,7 +20,7 @@ func _ready() -> void:
 func set_right():
 	is_right = true
 	ray_cast.target_position.x = abs(self.ray_cast.target_position.x)
-	ray_cast.position.x = 23
+	ray_cast.position.x = -13
 	flip_h = true
 	area_2d.scale.x = -1
 
