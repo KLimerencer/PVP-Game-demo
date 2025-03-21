@@ -1,8 +1,8 @@
 res://Scenes/levels/level_1.tscn
-res://Scenes/levels/zombie_manager.gd
-res://Scenes/Manager/hand_manager.gd
-res://Scenes/Plants/pea_shooter.gd
 res://Scenes/Plants/pea_shooter.tscn
-res://Scenes/Bullet/bullet_template.gd
 res://Scenes/Bullet/pea_bullet.tscn
 res://Scenes/Plants/plant_template.tscn
+res://Scenes/levels/zombie_manager.gd
+res://Scenes/Zombies/States/not_head_move.gd
+res://Scenes/Zombies/zombie_template.gd
+res://Scenes/Zombies/normal_zombie.tscn

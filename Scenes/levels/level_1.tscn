@@ -490,112 +490,112 @@ layout_mode = 2
 [node name="Cell" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
 layout_mode = 2
 
-[node name="Cell10" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
-layout_mode = 2
-
-[node name="Cell11" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
-layout_mode = 2
-
-[node name="Cell12" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
-layout_mode = 2
-
-[node name="Cell13" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
-layout_mode = 2
-
-[node name="Cell14" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
-layout_mode = 2
-
-[node name="Cell15" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
-layout_mode = 2
-
-[node name="Cell16" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+[node name="Cell18" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
 layout_mode = 2
 
 [node name="Cell17" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
 layout_mode = 2
 
-[node name="Cell18" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+[node name="Cell16" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
 layout_mode = 2
 
-[node name="Cell19" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+[node name="Cell15" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
 layout_mode = 2
 
-[node name="Cell20" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+[node name="Cell14" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
 layout_mode = 2
 
-[node name="Cell21" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+[node name="Cell13" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
 layout_mode = 2
 
-[node name="Cell22" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+[node name="Cell12" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
 layout_mode = 2
 
-[node name="Cell23" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+[node name="Cell11" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
 layout_mode = 2
 
-[node name="Cell24" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
-layout_mode = 2
-
-[node name="Cell25" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
-layout_mode = 2
-
-[node name="Cell26" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+[node name="Cell10" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
 layout_mode = 2
 
 [node name="Cell27" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
 layout_mode = 2
 
-[node name="Cell28" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+[node name="Cell26" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
 layout_mode = 2
 
-[node name="Cell29" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+[node name="Cell25" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
 layout_mode = 2
 
-[node name="Cell30" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+[node name="Cell24" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
 layout_mode = 2
 
-[node name="Cell31" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+[node name="Cell23" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
 layout_mode = 2
 
-[node name="Cell32" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+[node name="Cell22" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
 layout_mode = 2
 
-[node name="Cell33" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+[node name="Cell21" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
 layout_mode = 2
 
-[node name="Cell34" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+[node name="Cell20" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
 layout_mode = 2
 
-[node name="Cell35" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+[node name="Cell19" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
 layout_mode = 2
 
 [node name="Cell36" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
 layout_mode = 2
 
-[node name="Cell37" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+[node name="Cell35" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
 layout_mode = 2
 
-[node name="Cell38" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+[node name="Cell34" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
 layout_mode = 2
 
-[node name="Cell39" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+[node name="Cell33" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
 layout_mode = 2
 
-[node name="Cell40" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+[node name="Cell32" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
 layout_mode = 2
 
-[node name="Cell41" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+[node name="Cell31" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
 layout_mode = 2
 
-[node name="Cell42" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+[node name="Cell30" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
 layout_mode = 2
 
-[node name="Cell43" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+[node name="Cell29" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell28" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell45" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
 layout_mode = 2
 
 [node name="Cell44" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
 layout_mode = 2
 
-[node name="Cell45" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+[node name="Cell43" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell42" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell41" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell40" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell39" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell38" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
+layout_mode = 2
+
+[node name="Cell37" parent="UI/Cells2" instance=ExtResource("8_qy7kv")]
 layout_mode = 2
 
 [node name="BirthSunComponent" parent="UI" instance=ExtResource("9_4q2ys")]
@@ -609,6 +609,10 @@ collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FailArea"]
 position = Vector2(-7.5, 529.5)
+shape = SubResource("RectangleShape2D_1sc5r")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="FailArea"]
+position = Vector2(1925, 529.5)
 shape = SubResource("RectangleShape2D_1sc5r")
 
 [node name="Plants" type="Node2D" parent="."]

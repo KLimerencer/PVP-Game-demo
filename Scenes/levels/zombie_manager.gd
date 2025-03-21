@@ -38,21 +38,19 @@ func spawn_zombie():
 		SpawnARandomZombie()
 		await get_tree().create_timer(1).timeout
 		
-	#await get_tree().create_timer(5).timeout
-#
-	#for i in range(3):
-		#SpawnARandomZombie(false)
-		#SpawnARandomZombie(true)
-		#await get_tree().create_timer(1).timeout
-		#
-	#await get_tree().create_timer(5).timeout
-	#
-	##最后一波
-	#AudioManager.play_last_wave()
-	#for i in range(5):
-		#SpawnARandomZombie(false)
-		#SpawnARandomZombie(true)
-		#await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(5).timeout
+
+	for i in range(3):
+		SpawnARandomZombie()
+		await get_tree().create_timer(1).timeout
+		
+	await get_tree().create_timer(5).timeout
+	
+	#最后一波
+	AudioManager.play_last_wave()
+	for i in range(5):
+		SpawnARandomZombie()
+		await get_tree().create_timer(1).timeout
 		
 	spawn_over = true
 
