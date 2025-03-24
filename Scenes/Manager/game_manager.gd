@@ -45,6 +45,7 @@ func fail_game():
 
 @rpc("any_peer","call_remote","reliable")
 func game_success():
-	zombie_manager.is_end = true
+	UINode.end_game()
+	zombie_manager.end_game()
 	AudioManager.play_win_music()
 	

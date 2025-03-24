@@ -20,6 +20,8 @@ func _create_sun():
 	var sun_scene:Sun = SUN_SCENE.instantiate()
 	sun_scene.position = position
 	sun_scene.sun_num = birth_sun_component.sun_num
+	if from_enemy:
+		sun_scene.from_enemy = true
 	UI_Node.add_child(sun_scene)
 	var _tween = create_tween()
 	var end_pos = sun_scene.position + Vector2(randf_range(-40,40),0)

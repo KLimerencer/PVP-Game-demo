@@ -1,3 +1,9 @@
 res://Scenes/levels/level_1.tscn
 res://Scenes/Manager/game_manager.gd
 res://Scenes/levels/zombie_manager.gd
+res://Scenes/Manager/hand_manager.gd
+res://Scenes/Plants/sun_flower.tscn
+res://Scenes/Plants/plant_template.gd
+res://Scenes/Effects/sun.gd
+res://Scenes/Plants/sun_flower.gd
+res://Scenes/Effects/sun.tscn

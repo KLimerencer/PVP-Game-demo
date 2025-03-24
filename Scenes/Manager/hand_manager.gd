@@ -9,7 +9,7 @@ var card_list:Array[CardTemplate]
 var hand_scene:PlantTemplate
 var card_res:cardRes
 var path:String
-var is_right:bool
+var plant_enemy = false
 
 func _ready() -> void:
 	UINode = get_tree().get_first_node_in_group("UI")
@@ -22,7 +22,6 @@ func _ready() -> void:
 		cell.cell_mouse_exit.connect(_on_cell_mouse_exit)
 	for cell in cells2.get_children():
 		cell.click_cell.connect(_on_click_cell)
-		cell.cell_mouse_enter.connect(_on_cell_mouse_enter_right)
 		cell.cell_mouse_exit.connect(_on_cell_mouse_exit)
 
 func _on_card_click(card_res:cardRes):
@@ -43,7 +42,7 @@ func _on_card_click(card_res:cardRes):
 		self.path = card_res.plant_scene.resource_path
 		
 func _on_click_cell(cell:Cell):
-	if hand_scene:
+	if hand_scene and ((cell.get_parent() == cells2 and plant_enemy == true) or cell.get_parent() == cells):
 		AudioManager.play_plant()
 		cell.is_plant = true
 		hand_scene.global_position =  cell.global_position + card_res.card_shadow.get_size() / 2
@@ -80,18 +79,12 @@ func sync_plants(plant_scene_path: String, position: Vector2, health, cell_path)
 	plant.set_right()
 	var cell = get_node(cell_path)
 	plant.cell = cell
+	plant.from_enemy = true
 
 func _on_cell_mouse_enter(cell:Cell):
 	if hand_scene:
-		cell.card_shadow.texture = card_res.card_shadow
-	if is_right:
-		is_right = false
-		
-func _on_cell_mouse_enter_right(cell:Cell):
-	if hand_scene:
-		cell.card_shadow.texture = card_res.card_shadow
-	if not is_right:
-		is_right = true
+		if cell.get_parent() == cells2 and plant_enemy == true or cell.get_parent() == cells:
+			cell.card_shadow.texture = card_res.card_shadow
 
 func _on_cell_mouse_exit(cell:Cell):
 	cell.card_shadow.texture = null

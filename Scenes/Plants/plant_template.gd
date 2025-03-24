@@ -8,6 +8,7 @@ class_name PlantTemplate
 var health
 var cell:Cell
 var is_right = false
+var from_enemy = false
 
 func _ready() -> void:
 	health_component.health_update.connect(_on_health_update)
