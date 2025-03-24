@@ -13,7 +13,6 @@ func _ready() -> void:
 	prepare_game()
 
 func prepare_game():
-	zombie_manager.game_success.connect(_on_game_success)
 	fail_area.area_entered.connect(_on_fail_area_entered)
 	#摄像机
 	var tween = create_tween().set_trans(Tween.TRANS_CUBIC)
@@ -41,7 +40,11 @@ func fail_game():
 	fail_show_anim.play("failShow")
 	UINode.end_game()
 	zombie_manager.end_game()
-	AudioManager.play_fail_music()
+	game_success.rpc()
+	
 
-func _on_game_success():
+@rpc("any_peer","call_remote","reliable")
+func game_success():
+	zombie_manager.is_end = true
 	AudioManager.play_win_music()
+	

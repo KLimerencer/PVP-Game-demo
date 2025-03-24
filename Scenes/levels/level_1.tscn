@@ -611,10 +611,6 @@ collision_mask = 4
 position = Vector2(-7.5, 529.5)
 shape = SubResource("RectangleShape2D_1sc5r")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="FailArea"]
-position = Vector2(1925, 529.5)
-shape = SubResource("RectangleShape2D_1sc5r")
-
 [node name="Plants" type="Node2D" parent="."]
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]

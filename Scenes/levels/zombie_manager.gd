@@ -5,8 +5,6 @@ class_name ZombieManager
 @export var Zombies:Node2D
 @export var Zombies2:Node2D
 
-signal game_success
-
 var zombie_spawn_list:Array[Node2D]
 var zombie_spawn_list2:Array[Node2D]
 var zombie_list:Array[ZombieTemplate]
@@ -34,25 +32,12 @@ func end_game():
 #创建僵尸
 func spawn_zombie():
 	AudioManager.play_zombie_first_coming()
-	for i in range(2):
+	while not is_end:
 		SpawnARandomZombie()
-		await get_tree().create_timer(1).timeout
-		
-	await get_tree().create_timer(5).timeout
-
-	for i in range(3):
-		SpawnARandomZombie()
-		await get_tree().create_timer(1).timeout
-		
-	await get_tree().create_timer(5).timeout
+		await get_tree().create_timer(5).timeout
 	
 	#最后一波
-	AudioManager.play_last_wave()
-	for i in range(5):
-		SpawnARandomZombie()
-		await get_tree().create_timer(1).timeout
-		
-	spawn_over = true
+	#AudioManager.play_last_wave()
 
 #创建单个僵尸
 func SpawnARandomZombie():
@@ -77,5 +62,3 @@ func sync_zombie_spawn(index):
 func _on_zombie_dead(zombie):
 	zombie_list.erase(zombie)
 	zombie_list2.erase(zombie)
-	if len(zombie_list) == 0 and spawn_over:
-		game_success.emit()
