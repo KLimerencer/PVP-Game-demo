@@ -16,9 +16,9 @@ func set_right():
 	marker.position.x = -(marker.position.x)
 
 func _process(delta: float) -> void:
-	if ray_cast.get_collider() and not attack_component.can_attack and not self.is_end:
+	if ray_cast.get_collider() and not attack_component.can_attack:
 		attack_component.can_attack = true
-	else:
+	elif not ray_cast.get_collider():
 		attack_component.can_attack = false
 
 func _on_frame_changed() -> void:

@@ -9,7 +9,6 @@ var health
 var cell:Cell
 var is_right = false
 var from_enemy = false
-var is_end = false
 
 func _ready() -> void:
 	health_component.health_update.connect(_on_health_update)
@@ -26,7 +25,3 @@ func _on_health_update(health):
 	if health <= 0:
 		cell.is_plant = false
 		queue_free()
-		
-func end_game():
-	is_end = true
-	self.stop()

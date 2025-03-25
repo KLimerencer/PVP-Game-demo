@@ -1,7 +1,9 @@
-res://Scenes/Cards/card_template.tscn
-res://Globals/CardTypeManager.gd
-res://Scenes/Cards/Normal_Zombie/normal_zombie_card.tscn
-res://Scenes/Cards/card_template.gd
 res://Scenes/levels/level_1.tscn
-res://Scenes/levels/menu/menu.tscn
-res://Scenes/Cards/Nut/nut.tscn
+res://Scenes/Manager/game_manager.gd
+res://Scenes/levels/zombie_manager.gd
+res://Scenes/Manager/hand_manager.gd
+res://Scenes/Plants/sun_flower.tscn
+res://Scenes/Plants/plant_template.gd
+res://Scenes/Effects/sun.gd
+res://Scenes/Plants/sun_flower.gd
+res://Scenes/Effects/sun.tscn
