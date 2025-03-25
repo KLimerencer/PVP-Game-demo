@@ -1,5 +1,3 @@
 res://Scenes/levels/level_1.tscn
-res://Scenes/Plants/pea_shooter.tscn
-res://Scenes/Zombies/normal_zombie.tscn
-res://Scenes/levels/menu/menu.tscn
-res://Scenes/Manager/hand_manager.gd
+res://Scenes/UI/ui.gd
+res://Scenes/Bullet/pea_bullet.tscn

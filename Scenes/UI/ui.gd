@@ -6,8 +6,11 @@ const SUN_SCENE = preload("res://Scenes/Effects/sun.tscn")
 @export var card_list:Array[CardTemplate]
 @export var ChooseCardBg:TextureRect
 @onready var birth_sun_component: BirthSunComponent = $BirthSunComponent
-
+@export var boxContainer:BoxContainer
+@export var CardUIList:HBoxContainer
+@export var CardUIList2:HBoxContainer
 var sun_collect_pos := Vector2(40,40)
+var cardbg = 1
 
 func _ready() -> void:
 	birth_sun_component.birth_sun.connect(_on_birth_sun)
@@ -29,11 +32,23 @@ func _on_birth_sun(sun_num):
 	_tween.tween_property(sun_scene,"position",end_pos,5)
 
 func show_card_ui():
-	var tween = create_tween().set_ease(Tween.EASE_OUT_IN).set_trans(Tween.TRANS_CUBIC)
-	tween.tween_property(ChooseCardBg,"position",Vector2.ZERO,1)
-	await tween.finished
+	var tween1 = create_tween().set_ease(Tween.EASE_OUT_IN).set_trans(Tween.TRANS_SINE)
+	var tween2 = create_tween().set_ease(Tween.EASE_OUT_IN).set_trans(Tween.TRANS_SINE)
+	tween1.tween_property(ChooseCardBg,"position",Vector2.ZERO,1)
+	tween2.tween_property(boxContainer,"position",Vector2(524,4),1)
+	await tween1.finished
 	enable_card()
 	
 func enable_card():
 	for card in card_list:
 		card.is_disabled = false
+
+func _on_change_button_pressed() -> void:
+	if cardbg == 1:
+		CardUIList.hide()
+		CardUIList2.show()
+		cardbg = 2
+	else:
+		cardbg = 1
+		CardUIList2.hide()
+		CardUIList.show()

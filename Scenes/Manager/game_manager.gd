@@ -6,14 +6,13 @@ extends Node
 @export var UINode:UI
 @export var fail_area:Area2D
 @onready var zombie_manager: ZombieManager = $"../ZombieManager"
-
+@onready var plants: Node2D = $"../../Plants"
 var is_fail := false
 
 func _ready() -> void:
 	prepare_game()
 
 func prepare_game():
-	zombie_manager.game_success.connect(_on_game_success)
 	fail_area.area_entered.connect(_on_fail_area_entered)
 	#摄像机
 	var tween = create_tween().set_trans(Tween.TRANS_CUBIC)
@@ -41,7 +40,14 @@ func fail_game():
 	fail_show_anim.play("failShow")
 	UINode.end_game()
 	zombie_manager.end_game()
-	AudioManager.play_fail_music()
+	game_success.rpc()
+	for plant in plants.get_children():
+		plant.end_game()
+	
 
-func _on_game_success():
+@rpc("any_peer","call_remote","reliable")
+func game_success():
+	UINode.end_game()
+	zombie_manager.end_game()
 	AudioManager.play_win_music()
+	

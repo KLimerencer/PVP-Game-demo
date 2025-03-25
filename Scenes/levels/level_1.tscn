@@ -176,10 +176,13 @@ offset_bottom = 1053.0
 texture = ExtResource("5_kiem4")
 expand_mode = 1
 
-[node name="UI" type="CanvasLayer" parent="." node_paths=PackedStringArray("card_list", "ChooseCardBg") groups=["UI"]]
+[node name="UI" type="CanvasLayer" parent="." node_paths=PackedStringArray("card_list", "ChooseCardBg", "boxContainer", "CardUIList", "CardUIList2") groups=["UI"]]
 script = ExtResource("3_c8psq")
-card_list = [NodePath("ChooseCardBg/CardUIList/SunFlower"), NodePath("ChooseCardBg/CardUIList/PeaShooter"), NodePath("ChooseCardBg/CardUIList/Nut")]
+card_list = [NodePath("ChooseCardBg/CardUIList/SunFlower"), NodePath("ChooseCardBg/CardUIList/PeaShooter"), NodePath("ChooseCardBg/CardUIList/Nut"), NodePath("ChooseCardBg/CardUIList2/SunFlower"), NodePath("ChooseCardBg/CardUIList2/PeaShooter"), NodePath("ChooseCardBg/CardUIList2/Nut")]
 ChooseCardBg = NodePath("ChooseCardBg")
+boxContainer = NodePath("HBoxContainer")
+CardUIList = NodePath("ChooseCardBg/CardUIList")
+CardUIList2 = NodePath("ChooseCardBg/CardUIList2")
 
 [node name="BeginShow" type="Control" parent="UI"]
 layout_mode = 3
@@ -293,6 +296,24 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Nut" parent="UI/ChooseCardBg/CardUIList" instance=ExtResource("14_djsaw")]
+layout_mode = 2
+
+[node name="CardUIList2" type="HBoxContainer" parent="UI/ChooseCardBg"]
+visible = false
+layout_mode = 0
+offset_left = 80.0
+offset_top = 8.0
+offset_right = 512.0
+offset_bottom = 78.0
+theme_override_constants/separation = 54
+
+[node name="SunFlower" parent="UI/ChooseCardBg/CardUIList2" instance=ExtResource("3_uql73")]
+layout_mode = 2
+
+[node name="PeaShooter" parent="UI/ChooseCardBg/CardUIList2" instance=ExtResource("6_egttu")]
+layout_mode = 2
+
+[node name="Nut" parent="UI/ChooseCardBg/CardUIList2" instance=ExtResource("14_djsaw")]
 layout_mode = 2
 
 [node name="Sun_Label" type="Label" parent="UI/ChooseCardBg"]
@@ -603,16 +624,24 @@ layout_mode = 2
 [node name="Camera2D" type="Camera2D" parent="UI"]
 offset = Vector2(960, 540)
 
+[node name="HBoxContainer" type="HBoxContainer" parent="UI"]
+offset_left = 524.0
+offset_top = -90.0
+offset_right = 596.0
+offset_bottom = -11.0
+
+[node name="ChangeButton" type="Button" parent="UI/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+text = "切换单位"
+
 [node name="FailArea" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FailArea"]
 position = Vector2(-7.5, 529.5)
-shape = SubResource("RectangleShape2D_1sc5r")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="FailArea"]
-position = Vector2(1925, 529.5)
 shape = SubResource("RectangleShape2D_1sc5r")
 
 [node name="Plants" type="Node2D" parent="."]
@@ -655,3 +684,5 @@ position = Vector2(1088, 649)
 
 [node name="SpawnZombieNode5" type="Node2D" parent="Zombies2"]
 position = Vector2(1088, 742)
+
+[connection signal="pressed" from="UI/HBoxContainer/ChangeButton" to="UI" method="_on_change_button_pressed"]

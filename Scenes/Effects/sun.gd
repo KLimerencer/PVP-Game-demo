@@ -4,14 +4,18 @@ class_name Sun
 @export var collect_speed := 600
 @export var disappear_time := 25
 @onready var disappear_timer: Timer = $DisappearTimer
+@onready var button: Button = $Button
 
 var sun_num : int
 var is_click := false
 var UI_Node:UI
+var from_enemy = false
 
 func _ready() -> void:
 	disappear_timer.wait_time = disappear_time
 	disappear_timer.start()
+	if from_enemy:
+		button.hide()
 
 func _on_button_pressed() -> void:
 	if not is_click:
