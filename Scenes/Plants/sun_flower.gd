@@ -16,6 +16,10 @@ func _finish_plant():
 func _on_birth_sun(sun_num):
 	animation_player.play("birth_sun")
 
+func _process(delta: float) -> void:
+	if is_end:
+		birth_sun_component.timer.stop()
+
 func _create_sun():
 	var sun_scene:Sun = SUN_SCENE.instantiate()
 	sun_scene.position = position

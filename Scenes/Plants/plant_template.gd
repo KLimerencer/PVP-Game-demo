@@ -4,7 +4,7 @@ class_name PlantTemplate
 @onready var collision_shape: CollisionShape2D = $Area2D/CollisionShape2D
 @onready var health_component: HealthComponent = $HealthComponent
 @onready var area_2d: Area2D = $Area2D
-
+var is_end = false
 var health
 var cell:Cell
 var is_right = false
@@ -25,3 +25,7 @@ func _on_health_update(health):
 	if health <= 0:
 		cell.is_plant = false
 		queue_free()
+
+func end_game():
+	is_end = true
+	self.stop()

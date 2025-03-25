@@ -1,8 +1,8 @@
+Button
+HBoxContainer
 Node2D
 MultiplayerSpawner
 Node
 Label
 LineEdit
-Button
-HBoxContainer
 TextureRect

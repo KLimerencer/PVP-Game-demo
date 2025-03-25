@@ -6,7 +6,7 @@ extends Node
 @export var UINode:UI
 @export var fail_area:Area2D
 @onready var zombie_manager: ZombieManager = $"../ZombieManager"
-
+@onready var plants: Node2D = $"../../Plants"
 var is_fail := false
 
 func _ready() -> void:
@@ -41,6 +41,8 @@ func fail_game():
 	UINode.end_game()
 	zombie_manager.end_game()
 	game_success.rpc()
+	for plant in plants.get_children():
+		plant.end_game()
 	
 
 @rpc("any_peer","call_remote","reliable")
