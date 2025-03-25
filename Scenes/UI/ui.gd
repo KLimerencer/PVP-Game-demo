@@ -32,9 +32,11 @@ func _on_birth_sun(sun_num):
 	_tween.tween_property(sun_scene,"position",end_pos,5)
 
 func show_card_ui():
-	var tween = create_tween().set_ease(Tween.EASE_OUT_IN).set_trans(Tween.TRANS_CUBIC)
-	tween.tween_property(ChooseCardBg,"position",Vector2.ZERO,1)
-	await tween.finished
+	var tween1 = create_tween().set_ease(Tween.EASE_OUT_IN).set_trans(Tween.TRANS_SINE)
+	var tween2 = create_tween().set_ease(Tween.EASE_OUT_IN).set_trans(Tween.TRANS_SINE)
+	tween1.tween_property(ChooseCardBg,"position",Vector2.ZERO,1)
+	tween2.tween_property(boxContainer,"position",Vector2(524,4),1)
+	await tween1.finished
 	enable_card()
 	
 func enable_card():
