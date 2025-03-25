@@ -176,10 +176,12 @@ offset_bottom = 1053.0
 texture = ExtResource("5_kiem4")
 expand_mode = 1
 
-[node name="UI" type="CanvasLayer" parent="." node_paths=PackedStringArray("card_list", "ChooseCardBg") groups=["UI"]]
+[node name="UI" type="CanvasLayer" parent="." node_paths=PackedStringArray("card_list", "ChooseCardBg", "ChooseCardBg2", "boxContainer") groups=["UI"]]
 script = ExtResource("3_c8psq")
 card_list = [NodePath("ChooseCardBg/CardUIList/SunFlower"), NodePath("ChooseCardBg/CardUIList/PeaShooter"), NodePath("ChooseCardBg/CardUIList/Nut")]
 ChooseCardBg = NodePath("ChooseCardBg")
+ChooseCardBg2 = NodePath("ChooseCardBg2")
+boxContainer = NodePath("BoxContainer")
 
 [node name="BeginShow" type="Control" parent="UI"]
 layout_mode = 3
@@ -288,14 +290,57 @@ theme_override_constants/separation = 54
 
 [node name="SunFlower" parent="UI/ChooseCardBg/CardUIList" instance=ExtResource("3_uql73")]
 layout_mode = 2
+card_res = null
 
 [node name="PeaShooter" parent="UI/ChooseCardBg/CardUIList" instance=ExtResource("6_egttu")]
 layout_mode = 2
+card_res = null
 
 [node name="Nut" parent="UI/ChooseCardBg/CardUIList" instance=ExtResource("14_djsaw")]
 layout_mode = 2
+card_res = null
 
 [node name="Sun_Label" type="Label" parent="UI/ChooseCardBg"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -29.0
+offset_right = 77.0
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ChooseCardBg2" type="TextureRect" parent="UI"]
+offset_top = -93.0
+offset_right = 522.0
+offset_bottom = -6.0
+texture = ExtResource("2_rshtc")
+
+[node name="CardUIList" type="HBoxContainer" parent="UI/ChooseCardBg2"]
+layout_mode = 0
+offset_left = 80.0
+offset_top = 8.0
+offset_right = 512.0
+offset_bottom = 78.0
+theme_override_constants/separation = 54
+
+[node name="SunFlower" parent="UI/ChooseCardBg2/CardUIList" instance=ExtResource("3_uql73")]
+layout_mode = 2
+card_res = null
+
+[node name="PeaShooter" parent="UI/ChooseCardBg2/CardUIList" instance=ExtResource("6_egttu")]
+layout_mode = 2
+card_res = null
+
+[node name="Nut" parent="UI/ChooseCardBg2/CardUIList" instance=ExtResource("14_djsaw")]
+layout_mode = 2
+card_res = null
+
+[node name="Sun_Label" type="Label" parent="UI/ChooseCardBg2"]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -603,6 +648,19 @@ layout_mode = 2
 [node name="Camera2D" type="Camera2D" parent="UI"]
 offset = Vector2(960, 540)
 
+[node name="BoxContainer" type="BoxContainer" parent="UI"]
+offset_left = 525.0
+offset_top = 17.0
+offset_right = 617.0
+offset_bottom = 91.0
+alignment = 1
+
+[node name="ChangeButton" type="Button" parent="UI/BoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+text = "切换单位"
+
 [node name="FailArea" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 4
@@ -651,3 +709,5 @@ position = Vector2(1088, 649)
 
 [node name="SpawnZombieNode5" type="Node2D" parent="Zombies2"]
 position = Vector2(1088, 742)
+
+[connection signal="pressed" from="UI/BoxContainer/ChangeButton" to="UI" method="_on_change_button_pressed"]

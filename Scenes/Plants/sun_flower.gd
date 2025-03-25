@@ -13,6 +13,10 @@ func _finish_plant():
 	UI_Node = get_tree().get_first_node_in_group("UI")
 	birth_sun_component.timer.start()
 
+func _process(delta: float) -> void:
+	if is_end:
+		birth_sun_component.timer.stop()
+
 func _on_birth_sun(sun_num):
 	animation_player.play("birth_sun")
 
